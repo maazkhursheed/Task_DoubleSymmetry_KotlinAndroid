@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@color/white">
+
+
+    <!--Map -->
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/layout_vehicle_type" />
+
+    <!--layout vehicle type-->
+    <LinearLayout
+        android:id="@+id/layout_vehicle_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Vehicle Choice"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_large" />
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <ProgressBar
+                android:id="@+id/progress_vehicletype"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:indeterminate="true"
+                android:visibility="visible" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_vehicletypes"
+                android:layout_width="wrap_content"
+                android:layout_height="120dp"
+                android:layout_gravity="center_horizontal"
+                android:fadingEdge="none"
+                android:visibility="invisible" />
+
+        </FrameLayout>
+
+
+        <TextView
+            android:id="@+id/txt_vehicle_capacity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:drawableLeft="@drawable/icon_user_small"
+            android:drawablePadding="5dp"
+            android:textSize="@dimen/text_medium" />
+
+        <android.support.v7.widget.AppCompatCheckBox
+            android:id="@+id/blind_passenger"
+            android:layout_width="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:layout_marginBottom="23dp"
+            android:text="Passenger is blind" />
+
+        <com.rsmnm.Views.RippleView
+            android:id="@+id/btn_confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/btn_green_empty"
+            android:gravity="center"
+            app:rv_centered="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Confirm"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_xlarge"
+                android:textStyle="bold" />
+        </com.rsmnm.Views.RippleView>
+
+    </LinearLayout>
+
+    <!--layout location disabled-->
+    <LinearLayout
+        android:id="@+id/layout_idle_location_disabled"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="15dp"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical"
+        android:paddingTop="10dp"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/btn_pickup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/field_home_location"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_stearingwheel" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Enter pick-up point"
+                android:textSize="@dimen/text_medium" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="@color/grey" />
+
+            <ImageView
+                android:id="@+id/btn_ridelater2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:padding="10dp"
+                android:src="@drawable/icon_callendar" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:lineSpacingExtra="10dp"
+            android:text="Your location settings are turned off, please either pick your pick-up point manually of turn on the location settings"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_medium"
+            android:textStyle="bold" />
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/white" />
+
+        <LinearLayout
+            android:id="@+id/btn_enable_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="15dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Enable Location"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_large"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:src="@drawable/icon_arrow_right"
+                android:tint="@color/white" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <!--layout location enabled-->
+    <LinearLayout
+        android:id="@+id/layout_idle_location_enabled"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/field_home_location"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_stearingwheel" />
+
+        <Space
+            android:layout_width="20dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Where to?"
+            android:textSize="@dimen/text_medium" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:background="@color/grey" />
+
+        <ImageView
+            android:id="@+id/btn_ridelater"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:padding="10dp"
+            android:src="@drawable/icon_callendar" />
+
+    </LinearLayout>
+
+    <!--layout in Ride-->
+    <LinearLayout
+        android:id="@+id/layout_in_ride"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="10dp"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:visibility="gone">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/driver_img"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/bg_placeholder"
+                android:padding="5dp" />
+
+
+            <LinearLayout
+                android:id="@+id/layout_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_toRightOf="@id/driver_img"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/driver_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="User Name"
+                    android:textSize="@dimen/text_medium"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/driver_rating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="2dp"
+                    android:drawableRight="@drawable/icon_star_golden"
+                    android:drawablePadding="5dp"
+                    android:maxLines="1"
+                    android:text="4.5"
+                    android:textSize="@dimen/text_medium" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/vehicle_make_model"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/layout_user"
+                android:layout_alignLeft="@id/layout_user"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="2dp"
+                android:maxLines="1"
+                android:text="BMW (Grand Turismo)"
+                android:textSize="@dimen/text_small"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/layout_vehicle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/vehicle_make_model"
+                android:layout_alignLeft="@id/vehicle_make_model"
+                android:layout_marginTop="3dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/vehicle_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="Sedan"
+                    android:textSize="@dimen/text_small"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/vehicle_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:maxLines="1"
+                    android:text="FDA-23456"
+                    android:textSize="@dimen/text_small"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/layout_buttons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/driver_img"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/btn_contact"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_green_empty"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="Contact"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_small"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/btn_cancel"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/btn_blank_empty"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="Cancel"
+                    android:textSize="@dimen/text_small"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+    <!--Ride Loader-->
+    <RelativeLayout
+        android:id="@+id/loader"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#3d111111"
+        android:gravity="center"
+        android:visibility="gone">
+
+
+        <com.rsmnm.Views.RippleBackground
+            android:id="@+id/ripple_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:rb_color="@color/colorAccent"
+            app:rb_duration="3000"
+            app:rb_radius="32dp"
+            app:rb_rippleAmount="5"
+            app:rb_scale="5"
+            app:rb_type="fillRipple" />
+
+        <FrameLayout
+            android:id="@+id/loader_circle"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/shape_circle_green">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/logo_finding" />
+
+        </FrameLayout>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

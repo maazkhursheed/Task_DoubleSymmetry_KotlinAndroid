@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_drawer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/silver">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <com.rsmnm.Views.TitleBar
+            android:id="@+id/titlebar"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:elevation="20dp" />
+
+        <FrameLayout
+            android:id="@+id/frame_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/titlebar"
+            android:layout_weight="1" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/titlebar"
+            android:layout_marginTop="-5dp"
+            android:indeterminate="true"
+            android:indeterminateTint="@color/black"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+
+    <!--android:layout_gravity="left"-->
+
+    <include
+        layout="@layout/menu_drawer"
+        android:layout_width="260dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="left"
+        android:layout_marginRight="-60dp" />
+
+
+</android.support.v4.widget.DrawerLayout>

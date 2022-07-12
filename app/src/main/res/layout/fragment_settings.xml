@@ -1,0 +1,583 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:orientation="vertical">
+
+        <com.rsmnm.Views.RippleView
+            android:id="@+id/btn_profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:rv_centered="true"
+            app:rv_color="@color/colorPrimary">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:padding="20dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txt_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="@dimen/text_xlarge"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txt_email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="@dimen/text_medium" />
+
+                    <TextView
+                        android:id="@+id/txt_phone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="@dimen/text_medium" />
+                </LinearLayout>
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/img_user"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:background="@drawable/placeholder_img_profile"
+                    android:padding="2dp" />
+            </LinearLayout>
+
+        </com.rsmnm.Views.RippleView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/sept_horizontal_profile" />
+
+        <com.rsmnm.Views.RippleView
+            android:id="@+id/btn_documents"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:rv_centered="true"
+            app:rv_color="@color/colorPrimary">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:padding="20dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Documents"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="@dimen/text_large" />
+
+                    <TextView
+                        android:id="@+id/txt_documents_count"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:visibility="gone"
+                        android:layout_marginStart="10dp"
+                        android:background="@drawable/green_circle"
+                        android:gravity="center"
+                        android:maxLength="3"
+                        android:padding="2dp"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_small" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/arrow_right" />
+            </LinearLayout>
+        </com.rsmnm.Views.RippleView>
+
+        <View
+            android:id="@+id/seperator_documents"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/sept_horizontal_profile" />
+
+        <com.rsmnm.Views.RippleView
+            android:id="@+id/btn_notifications"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:rv_centered="true"
+            app:rv_color="@color/colorPrimary">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:padding="20dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Notifications"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="@dimen/text_large" />
+
+                    <TextView
+                        android:id="@+id/txt_notif_count"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_marginStart="10dp"
+                        android:background="@drawable/green_circle"
+                        android:gravity="center"
+                        android:maxLength="3"
+                        android:padding="2dp"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_small" />
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/arrow_right" />
+            </LinearLayout>
+        </com.rsmnm.Views.RippleView>
+
+        <View
+            android:id="@+id/seperator_saveloc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/sept_horizontal_profile" />
+
+        <com.rsmnm.Views.RippleView
+            android:id="@+id/btn_save_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:rv_centered="true"
+            app:rv_color="@color/colorPrimary">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Save Location"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/text_large" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/arrow_right" />
+            </LinearLayout>
+        </com.rsmnm.Views.RippleView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/sept_horizontal_profile" />
+
+        <com.rsmnm.Views.RippleView
+            android:id="@+id/btn_car_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:rv_centered="true"
+            app:rv_color="@color/colorPrimary">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Car Type Fees"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/text_large" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/arrow_right" />
+            </LinearLayout>
+        </com.rsmnm.Views.RippleView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/sept_horizontal_profile" />
+
+        <com.rsmnm.Views.RippleView
+            android:id="@+id/btn_service_menu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:rv_centered="true"
+            app:rv_color="@color/colorPrimary">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Service Details"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/text_large" />
+
+                <ImageView
+                    android:id="@+id/icon_service_menu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/arrow_right" />
+            </LinearLayout>
+        </com.rsmnm.Views.RippleView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/sept_horizontal_profile" />
+
+        <LinearLayout
+            android:id="@+id/layout_service_menu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/grey"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <com.rsmnm.Views.RippleView
+                android:id="@+id/btn_terms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:rv_centered="true"
+                app:rv_color="@color/colorPrimary">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Terms and Conditions"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="@dimen/text_large" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/arrow_right" />
+                </LinearLayout>
+            </com.rsmnm.Views.RippleView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/sept_horizontal_profile" />
+
+            <com.rsmnm.Views.RippleView
+                android:id="@+id/btn_privacypolicy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:rv_centered="true"
+                app:rv_color="@color/colorPrimary">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Privacy Policy"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="@dimen/text_large" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/arrow_right" />
+                </LinearLayout>
+            </com.rsmnm.Views.RippleView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/sept_horizontal_profile" />
+
+            <com.rsmnm.Views.RippleView
+                android:id="@+id/btn_service_agreement"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:rv_centered="true"
+                app:rv_color="@color/colorPrimary">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Service Agreement"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="@dimen/text_large" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/arrow_right" />
+                </LinearLayout>
+            </com.rsmnm.Views.RippleView>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/sept_horizontal_profile" />
+
+            <com.rsmnm.Views.RippleView
+                android:id="@+id/btn_insurance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:rv_centered="true"
+                app:rv_color="@color/colorPrimary">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Insurance"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="@dimen/text_large" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/arrow_right" />
+                </LinearLayout>
+
+            </com.rsmnm.Views.RippleView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/sept_horizontal_profile" />
+
+            <com.rsmnm.Views.RippleView
+                android:id="@+id/btn_software"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:rv_centered="true"
+                app:rv_color="@color/colorPrimary">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Software"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="@dimen/text_large" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/arrow_right" />
+                </LinearLayout>
+
+            </com.rsmnm.Views.RippleView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/sept_horizontal_profile" />
+
+            <com.rsmnm.Views.RippleView
+                android:id="@+id/btn_payout_process"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:rv_centered="true"
+                app:rv_color="@color/colorPrimary">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Payout Process"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="@dimen/text_large" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/arrow_right" />
+                </LinearLayout>
+
+            </com.rsmnm.Views.RippleView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/sept_horizontal_profile" />
+
+        </LinearLayout>
+
+        <com.rsmnm.Views.RippleView
+            android:id="@+id/btn_support"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:rv_centered="true"
+            app:rv_color="@color/colorPrimary">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Contact Support"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/text_large" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/arrow_right" />
+            </LinearLayout>
+        </com.rsmnm.Views.RippleView>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/sept_horizontal_profile" />
+
+        <com.rsmnm.Views.RippleView
+            android:id="@+id/btn_logout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:rv_centered="true"
+            app:rv_color="@color/colorPrimary">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Logout"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/text_large" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/arrow_right" />
+            </LinearLayout>
+        </com.rsmnm.Views.RippleView>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/sept_horizontal_profile" />
+
+        <com.rsmnm.Views.RippleView
+            android:id="@+id/btn_delete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:rv_centered="true"
+            app:rv_color="@color/colorPrimary">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Delete Account"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/text_large" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/arrow_right" />
+            </LinearLayout>
+        </com.rsmnm.Views.RippleView>
+    </LinearLayout>
+</ScrollView>
